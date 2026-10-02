@@ -15,7 +15,7 @@ class CalculatorEngine {
   List<String> _tokenize(String rawInput) {
     final String expression = rawInput.replaceAll(' ', '');
     if (expression.isEmpty) {
-      throw const CalculatorException('Выражение не может быть пустым');
+      throw const CalculatorException('Введите выражение');
     }
 
     final List<String> tokens = [];
@@ -64,7 +64,7 @@ class CalculatorEngine {
           tokens.add(char);
         }
       } else {
-        throw CalculatorException('Недопустимый символ: "$char"');
+        throw CalculatorException('Недопустимый символ "$char"');
       }
     }
 
@@ -99,9 +99,7 @@ class CalculatorEngine {
           _executeTopOp(values, operators);
         }
         if (operators.isEmpty) {
-          throw const CalculatorException(
-            'Несбалансированные скобки: лишняя ")"',
-          );
+          throw const CalculatorException('Пропущена открывающая скобка');
         }
         operators.removeLast();
       } else if (token == '%') {
@@ -121,15 +119,13 @@ class CalculatorEngine {
     while (operators.isNotEmpty) {
       final String op = operators.last;
       if (op == '(' || op == ')') {
-        throw const CalculatorException(
-          'Несбалансированные скобки: не закрыта "("',
-        );
+        throw const CalculatorException('Пропущена закрывающая скобка');
       }
       _executeTopOp(values, operators);
     }
 
     if (values.length != 1) {
-      throw const CalculatorException('Синтаксическая ошибка в выражении');
+      throw const CalculatorException('Некорректное выражение');
     }
 
     return values.single;
@@ -137,9 +133,7 @@ class CalculatorEngine {
 
   void _executeTopOp(List<double> values, List<String> operators) {
     if (operators.isEmpty) {
-      throw const CalculatorException(
-        'Синтаксическая ошибка: пустой стек операторов',
-      );
+      throw const CalculatorException('Некорректное выражение');
     }
 
     final String op = operators.removeLast();
@@ -152,22 +146,20 @@ class CalculatorEngine {
 
   void _applyUnaryOp(String op, List<double> values) {
     if (values.isEmpty) {
-      throw const CalculatorException('Отсутствует число для унарной операции');
+      throw const CalculatorException('Пропущено число');
     }
 
     final double val = values.removeLast();
     if (op == 'u-') {
       values.add(-val);
     } else {
-      throw CalculatorException('Неизвестная унарная операция: "$op"');
+      throw CalculatorException('Неизвестная операция "$op"');
     }
   }
 
   void _applyBinaryOp(String op, List<double> values) {
     if (values.length < 2) {
-      throw const CalculatorException(
-        'Недостаточно чисел для выполнения операции',
-      );
+      throw const CalculatorException('Пропущено число');
     }
 
     final double b = values.removeLast();
@@ -186,13 +178,13 @@ class CalculatorEngine {
         }
         values.add(a / b);
       default:
-        throw CalculatorException('Неизвестный оператор: "$op"');
+        throw CalculatorException('Неизвестный оператор "$op"');
     }
   }
 
   void _applyPercent(List<double> values, List<String> operators) {
     if (values.isEmpty) {
-      throw const CalculatorException('Недостаточно чисел для процента');
+      throw const CalculatorException('Пропущено число перед %');
     }
 
     final double b = values.removeLast();
@@ -213,9 +205,10 @@ class CalculatorEngine {
     if (value.isInfinite || value.isNaN) {
       return 'Error';
     }
-    if (value % 1 == 0) {
-      return value.toInt().toString();
+    final double rounded = double.parse(value.toStringAsPrecision(12));
+    if (rounded % 1 == 0) {
+      return rounded.toInt().toString();
     }
-    return value.toString();
+    return rounded.toString();
   }
 }
