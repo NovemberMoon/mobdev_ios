@@ -1,4 +1,4 @@
-package com.example.mobdev_ios
+package ru.university.contacts_app
 
 import io.flutter.embedding.android.FlutterActivity
 

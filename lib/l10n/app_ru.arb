@@ -1,0 +1,138 @@
+{
+  "@@locale": "ru",
+
+  "appTitle": "Контакты",
+  "@appTitle": { "description": "Application title shown in the app bar and task switcher." },
+
+  "searchHint": "Поиск по имени",
+  "@searchHint": { "description": "Placeholder of the contacts search field." },
+
+  "clearSearch": "Очистить поиск",
+  "@clearSearch": { "description": "Tooltip of the button that clears the search query." },
+
+  "sortAscending": "А–Я",
+  "@sortAscending": { "description": "Label of the ascending sort mode." },
+
+  "sortDescending": "Я–А",
+  "@sortDescending": { "description": "Label of the descending sort mode." },
+
+  "toggleSortTooltip": "Изменить порядок сортировки",
+  "@toggleSortTooltip": { "description": "Tooltip of the sort toggle button." },
+
+  "foundCount": "Найдено: {count, plural, one{{count} контакт} few{{count} контакта} many{{count} контактов} other{{count} контакта}}",
+  "@foundCount": {
+    "description": "Number of contacts matching the current search.",
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "noPhone": "Без номера",
+  "@noPhone": { "description": "Shown instead of a phone number when the contact has none." },
+
+  "hasEmail": "Есть email",
+  "@hasEmail": { "description": "Tooltip and semantic label of the email presence badge." },
+
+  "unnamedContact": "Без имени",
+  "@unnamedContact": { "description": "Shown when a contact has no display name." },
+
+  "loadingContacts": "Загрузка контактов…",
+  "@loadingContacts": { "description": "Status while contacts are being read from the device." },
+
+  "permissionDeniedTitle": "Нет доступа к контактам",
+  "@permissionDeniedTitle": { "description": "Title of the permission denied state." },
+
+  "permissionDeniedMessage": "Разрешите приложению читать контакты, чтобы увидеть список.",
+  "@permissionDeniedMessage": { "description": "Explanation of the permission denied state." },
+
+  "requestAccess": "Запросить доступ",
+  "@requestAccess": { "description": "Button that shows the system permission dialog again." },
+
+  "permissionPermanentlyDeniedTitle": "Доступ запрещён",
+  "@permissionPermanentlyDeniedTitle": { "description": "Title of the permanently denied state." },
+
+  "permissionPermanentlyDeniedMessage": "Системный запрос больше недоступен. Включите доступ к контактам в настройках приложения и вернитесь сюда.",
+  "@permissionPermanentlyDeniedMessage": { "description": "Explanation of the permanently denied state." },
+
+  "openSettings": "Открыть настройки приложения",
+  "@openSettings": { "description": "Button that opens the system settings of the app." },
+
+  "emptyBookTitle": "Нет сохранённых контактов",
+  "@emptyBookTitle": { "description": "Title of the empty address book state." },
+
+  "emptyBookMessage": "Адресная книга пуста. Добавьте контакты и потяните экран вниз, чтобы обновить список.",
+  "@emptyBookMessage": { "description": "Explanation of the empty address book state." },
+
+  "emptySearchTitle": "Ничего не найдено",
+  "@emptySearchTitle": { "description": "Title of the empty search result state." },
+
+  "emptySearchMessage": "Ничего не найдено по запросу «{query}»",
+  "@emptySearchMessage": {
+    "description": "Explanation of the empty search result state.",
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "errorTitle": "Не удалось прочитать контакты",
+  "@errorTitle": { "description": "Title of the read error state." },
+
+  "errorMessage": "Произошла системная ошибка при чтении адресной книги. Попробуйте ещё раз.",
+  "@errorMessage": { "description": "Explanation of the read error state." },
+
+  "retry": "Повторить",
+  "@retry": { "description": "Button that retries reading contacts." },
+
+  "switchToLightTheme": "Светлая тема",
+  "@switchToLightTheme": { "description": "Tooltip of the theme toggle in dark mode." },
+
+  "switchToDarkTheme": "Тёмная тема",
+  "@switchToDarkTheme": { "description": "Tooltip of the theme toggle in light mode." },
+
+  "contactDetailsTitle": "Контакт",
+  "@contactDetailsTitle": { "description": "App bar title of the contact details screen." },
+
+  "sectionPhones": "Телефоны",
+  "@sectionPhones": { "description": "Header of the phone numbers section." },
+
+  "sectionEmails": "Электронная почта",
+  "@sectionEmails": { "description": "Header of the email addresses section." },
+
+  "sectionOrganization": "Организация",
+  "@sectionOrganization": { "description": "Header of the organization section." },
+
+  "sectionAddresses": "Адреса",
+  "@sectionAddresses": { "description": "Header of the postal addresses section." },
+
+  "labelMobile": "Мобильный",
+  "@labelMobile": { "description": "Mobile field label." },
+
+  "labelHome": "Домашний",
+  "@labelHome": { "description": "Home field label." },
+
+  "labelWork": "Рабочий",
+  "@labelWork": { "description": "Work field label." },
+
+  "labelMain": "Основной",
+  "@labelMain": { "description": "Main field label." },
+
+  "labelFax": "Факс",
+  "@labelFax": { "description": "Fax field label." },
+
+  "labelPager": "Пейджер",
+  "@labelPager": { "description": "Pager field label." },
+
+  "labelOther": "Другой",
+  "@labelOther": { "description": "Fallback field label." },
+
+  "fieldCompany": "Компания",
+  "@fieldCompany": { "description": "Company field caption." },
+
+  "fieldJobTitle": "Должность",
+  "@fieldJobTitle": { "description": "Job title field caption." },
+
+  "fieldDepartment": "Отдел",
+  "@fieldDepartment": { "description": "Department field caption." },
+
+  "noContactDetails": "Других данных о контакте нет",
+  "@noContactDetails": { "description": "Shown when a contact has only a name." },
+
+  "copiedToClipboard": "Скопировано в буфер обмена",
+  "@copiedToClipboard": { "description": "Snackbar after copying a value." }
+}
